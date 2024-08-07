@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(../images/back.avif);
+    background-size: cover;
+    background-position: center;
+    padding: 10px 8%;
+}
+.btn{
+    background-color: white;
+    width:70px;
+    border-radius:30px;
+    box-shadow: 2px 2px 3px black;
+    text-decoration: none;
+    transform: translate(900px,-25px);
+    border: none;
+}
+.Edit{
+    text-decoration: none;
+    font-size: 20px;
+    color:black;
+    
+}
+h2{
+    color: aliceblue;
+
+}

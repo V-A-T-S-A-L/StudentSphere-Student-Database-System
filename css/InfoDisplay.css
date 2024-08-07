@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+} 
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(../images/back.avif);
+    background-size: cover;
+    background-position: center;
+}
+.banner h2{
+    color: #fff;
+}
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+.logo{
+    width: 75px;
+    cursor: pointer;
+}
+ .btn{
+    transform: translate(900px,-20px);
+    background-color: green;
+    border-radius: 30px;
+    width: 100px;
+    border: 10px black;
+}
+
+.Edit{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    border: 2px rgb(0, 0, 0);
+    width: 30px;
+}
