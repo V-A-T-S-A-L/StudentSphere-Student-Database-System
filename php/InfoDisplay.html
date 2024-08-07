@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Achievement Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .container {
+        width: 90%;
+        max-width: 800px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        text-align: center;
+    }
+    .achievement {
+        margin-bottom: 10px;
+    }
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    .button {
+        padding: 15px 30px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+    input[type="text"],
+    textarea {
+        width: calc(100% - 22px);
+        padding: 15px;
+        margin: 5px 0 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Achievement Page</h2>
+    <div id="achievementsContainer">
+        <div class="achievement">
+            <label for="achievement">Achievement 1</label>
+            <textarea id="achievement1" name="achievement1" required></textarea>
+        </div>
+    </div>
+    <button type="button" class="button" id="addAchievementButton">Add Achievement</button>
+    <div class="button-container">
+        <button class="button" onclick="goBack()">Back</button>
+        <button class="button" onclick="saveAchievements()">Save</button>
+    </div>
+</div>
+
+<script>
+    let achievementCount = 1;
+
+    function addAchievement() {
+        achievementCount++;
+        const achievementsContainer = document.getElementById('achievementsContainer');
+        const newAchievement = document.createElement('div');
+        newAchievement.classList.add('achievement');
+        newAchievement.innerHTML = `
+            <label for="achievement">Achievement ${achievementCount}</label>
+            <textarea id="achievement${achievementCount}" name="achievement${achievementCount}" required></textarea>
+        `;
+        achievementsContainer.appendChild(newAchievement);
+    }
+
+    function goBack() {
+        window.history.back();
+    }
+
+    function saveAchievements() {
+        const achievements = [];
+        for (let i = 1; i <= achievementCount; i++) {
+            const achievement = document.getElementById(`achievement${i}`).value;
+            achievements.push(achievement);
+        }
+        // Here you can send the achievements to your server or perform any other action
+        console.log("Achievements:", achievements);
+    }
+
+    document.getElementById('addAchievementButton').addEventListener('click', addAchievement);
+</script>
+
+</body>
+</html>
